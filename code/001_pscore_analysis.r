@@ -43,7 +43,7 @@ cohort <-
 # Define covariates used in the propensity score model
 # Specify logistic regression model
 # Note: treatment is the variable name defining treatment groups
-psModel <- glm(trt ~ age + female + ses + smoke + alc + bmicat + nsaid_rx + cancer, family=binomial(), data= cohort)
+psModel <- glm(trt ~ age + female + ses + smoke + alc + bmicat + nsaid_rx + cancer + hyper, family=binomial(), data= cohort)
 
 # Append patient-level estimated propensity score (pscore) to cohort data
 cohort$pscore <- predict(psModel, type = "response")
@@ -69,12 +69,12 @@ ggplot(cohort, aes(x = pscore, fill = as.factor(trt))) +
 
 
 # Use cobalt to assess balance before and after weighting
-bal.tab(trt ~ age + female + ses + smoke + alc + bmicat + nsaid_rx + cancer,
+bal.tab(trt ~ age + female + ses + smoke + alc + bmicat + nsaid_rx + cancer + hyper,
         data = cohort,
         weights = cohort$ps_weight)
 
 # Make a love plot to compare balance before and after propensity score weighting
-love.plot(bal.tab(trt ~ age + female + ses + smoke + alc + bmicat + nsaid_rx + cancer,
+love.plot(bal.tab(trt ~ age + female + ses + smoke + alc + bmicat + nsaid_rx + cancer + hyper,
                   data = cohort,
                   weights = cohort$ps_weight),
           threshold = 0.1, stars = "raw" )
