@@ -81,7 +81,7 @@ love.plot(bal.tab(trt ~ age + female + ses + smoke + alc + bmicat + nsaid_rx + c
 
 
 ################################################################################
-# 0.4 Estimate treatment effect
+# 0.4 Estimate treatment effect OK!
 ################################################################################
 
 # Define survey design object
