@@ -28,7 +28,7 @@ install_load <- function(packages) {
 install_load(required_packages)
 
 ################################################################################
-# 0.1 Import data
+# 0.1 Import DATA
 ################################################################################
 print("Import data")
 
