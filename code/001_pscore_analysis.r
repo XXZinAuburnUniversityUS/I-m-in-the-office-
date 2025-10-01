@@ -5,7 +5,7 @@
 # Author(s): John Tazare
 # Purpose: This script is to import cohort data, estimate propensity scores
 # and estimate treatment effects
-#
+#1111111111111111111
 # 
 ###################################################################################
 
@@ -31,7 +31,7 @@ install_load(required_packages)
 # 0.1 Import DATA
 ################################################################################
 print("Import data")
-
+##############
 cohort <- 
   read_csv("./data/cohort.csv") %>% 
   mutate(across(.cols = c(female, ses, smoke, alc, bmicat, nsaid_rx, cancer, hyper),
